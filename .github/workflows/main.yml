@@ -16,12 +16,12 @@ jobs:
       with:
         node-version: '14'
         
+    - name: Install dependencies
+      run: npm install -g node-gyp
+      
     - name: Change to src directory
       run: cd src
       
-    - name: Install dependencies
-      run: npm install -g node-gyp
-
     - name: Build
       run: npm run build
 
