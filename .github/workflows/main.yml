@@ -19,15 +19,13 @@ jobs:
     - name: Install dependencies
       run: npm install -g node-gyp
       
-    - name: Change to src directory
-      run: cd src
-      
     - name: Build
       run: npm run build
+      working-directory: src
 
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
         name: dist
         path: |
-          dist
+          src/dist
